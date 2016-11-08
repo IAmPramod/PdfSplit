@@ -86,6 +86,7 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
+    pg (0.18.3)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -163,6 +164,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pdf-reader
+  pg
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
