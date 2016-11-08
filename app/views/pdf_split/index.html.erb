@@ -1,0 +1,22 @@
+<h4 class= 'text-primary' style = 'text-align: center'>Upload a set of payslip to split them</h4>
+<div class ='row'>
+  <div class = 'span4 well'>
+    <% if session[:errors] && session[:errors].any? %>
+      <p class="alert alert-error">Ooops! Please correct the following:
+        <ul>
+          <li class="error"><%= session[:errors] %></li>
+        </ul>
+       </p>
+    <% session[:errors] = nil %>
+    <% end %>
+    <%= form_tag({:action => :split_pdf}, :multipart => true, :class => 'form-inline') do %>
+      <div class = 'form-group'>
+      	<label for="file">File to Upload </label>
+        <%= file_field_tag 'pdf' %>
+      </div>
+    	<%= submit_tag "Upload payslips" , :class => 'btn btn-default'%>
+    <% end %>
+  </div>
+</div>
+<br>
+<span class='help-block'><b>Note:</b> Input should be a pdf batch file (pay slip) consisting of multiple pages - each page will pertain to a single employee. The application will parse the name of the employee, split the pdf batch file into individual pages, and then place that sheet into the specific employee's folder.</span>
