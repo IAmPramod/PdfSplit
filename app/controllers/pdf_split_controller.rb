@@ -4,7 +4,6 @@ class PdfSplitController < ApplicationController
   end
 
   def split_pdf
-    puts params[:pdf]
     if !params[:pdf] || (params[:pdf] && !params[:pdf].content_type.split('/').include?('pdf'))
       session[:errors] = "Please upload a pdf file"
       redirect_to root_path
